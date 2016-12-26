@@ -1,0 +1,11 @@
+{
+  "name": "task1-angular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "check-answer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

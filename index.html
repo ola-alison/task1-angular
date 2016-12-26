@@ -1,0 +1,39 @@
+<html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+        <link rel="stylesheet" type="text/css" href="style1.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>     
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="check-answer.js"></script>
+        
+	</head>
+	<body ng-app="checkAnswersApp">
+		<div class="container">
+            
+            <form ng-controller="checkAnswerController" >
+                <div ng-repeat="a in answers">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="type in answer" ng-model="a.userAnswer">
+                </div>
+                
+                <div class="btn-group">
+                    <button  class="btn btn-default" type="submit" ng-click="checkAnswer(a)">Evaluate</button>
+                    
+                    <button  class="btn btn-default" type="submit" ng-click="showAnswer(a)">Show answer</button>
+                </div>
+                
+                <div class="points-color" ng-class="{'correctAnswer': a.awardedPoints > 0 , 'wrongAnswer': a.awardedPoints == 0 }">
+			         <p>Points: {{a.awardedPoints}}</p>	
+                </div>
+                <div class="">
+			         <p>Correct answer: {{a.showAnswer}}</p>	
+                </div>
+                             
+                </div>
+			</form>
+		</div>
+	</body>
+</html>
+
